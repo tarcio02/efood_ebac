@@ -1,4 +1,5 @@
-import Header from '../../components/Header'
+import ProfileHeader from '../../components/ProfileHeader'
+import Banner from '../../components/Banner'
 import ListaRestaurantes from '../../components/ListaRestaurantes'
 import ModeloRestaurante from '../../models/Restaurante'
 
@@ -11,11 +12,10 @@ const comercios: ModeloRestaurante[] = [
     infos: ['Destaque da semana', 'Japonesa'],
     image: prato1,
     title: 'Hioki Sushi',
-    number: '4.9',
+    number: '4.0',
     star: estrela,
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, nihil suscipit nam libero, ipsum sit saepe inventore veritatis quis hic, assumenda molestias reprehenderit officiis natus earum cupiditate perspiciatis excepturi. Mollitia?',
-    // eslint-disable-next-line react/jsx-key
     button: 'Saiba mais'
   },
   {
@@ -77,7 +77,8 @@ const comercios: ModeloRestaurante[] = [
 
 const Home = () => (
   <>
-    <Header />
+    <ProfileHeader />
+    <Banner />
     <ListaRestaurantes comercios={comercios} />
   </>
 )

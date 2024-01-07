@@ -1,4 +1,5 @@
-import Tag from '../Tag'
+//import Tag from '../Tag'
+import { Link } from 'react-router-dom'
 
 import {
   Card,
@@ -8,7 +9,9 @@ import {
   NotaContainer,
   Nota,
   Descricao,
-  Infos
+  Infos,
+  TagContainer,
+  SaibaMais
 } from './styles'
 
 type Props = {
@@ -34,7 +37,7 @@ const Restaurante = ({
     <img src={image} alt={title} />
     <Infos>
       {infos.map((info) => (
-        <Tag key={info}>{info}</Tag>
+        <TagContainer key={info}>{info}</TagContainer>
       ))}
     </Infos>
     <CardContainer>
@@ -46,7 +49,14 @@ const Restaurante = ({
         </NotaContainer>
       </TituloContainer>
       <Descricao>{description}</Descricao>
-      <Tag size="big">{button}</Tag>
+      <SaibaMais>
+        <Link
+          style={{ textDecoration: 'none', color: '#FFEBD9' }}
+          to="/categories"
+        >
+          {button}
+        </Link>
+      </SaibaMais>
     </CardContainer>
   </Card>
 )

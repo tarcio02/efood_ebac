@@ -1,13 +1,9 @@
 import styled from 'styled-components'
 import { cores } from '../../styles'
-import { TagContainer } from '../Tag/styles'
+//import { TagContainer } from '../Tag/styles'
 
 export const Card = styled.div`
   position: relative;
-
-  ${TagContainer} {
-    margin-right: 8px;
-  }
 `
 
 export const CardContainer = styled.div`
@@ -53,4 +49,25 @@ export const Infos = styled.div`
   position: absolute;
   top: 16px;
   right: 8px;
+`
+
+export const TagContainer = styled.div`
+  background-color: ${cores.coral};
+  color: ${cores.bege};
+  font-size: 12px;
+  font-weight: bold;
+  padding: 6px 4px;
+  display: inline-block;
+  margin-right: 8px;
+`
+
+export const SaibaMais = styled.button`
+  background-color: ${cores.coral};
+  font-size: 14px;
+  font-weight: bold;
+  padding: 4px 6px;
+  display: inline-block;
+  margin-right: 8px;
+  border: none;
+  cursor: pointer;
 `

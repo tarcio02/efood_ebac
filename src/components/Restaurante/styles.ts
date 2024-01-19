@@ -4,6 +4,12 @@ import { cores } from '../../styles'
 
 export const Card = styled.div`
   position: relative;
+
+  > img {
+    width: 100%;
+    max-height: 217px;
+    object-fit: cover;
+  }
 `
 
 export const CardContainer = styled.div`

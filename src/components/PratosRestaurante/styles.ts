@@ -66,8 +66,9 @@ export const TagContainer = styled.div`
   margin-right: 8px;
 `
 
-export const SaibaMais = styled.button`
+export const BotaoAdicionar = styled.button`
   background-color: ${cores.bege};
+  color: ${cores.coral};
   font-size: 14px;
   font-weight: bold;
   padding: 4px;
@@ -75,4 +76,86 @@ export const SaibaMais = styled.button`
   width: 100%;
   border: none;
   cursor: pointer;
+`
+
+export const Modal = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  &.visivel {
+    display: flex;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.73);
+  }
+`
+
+export const ModalContent = styled.div`
+  max-width: 1024px;
+  width: 100%;
+  max-height: 344px;
+  height: 100%;
+  background-color: ${cores.coral};
+  color: ${cores.branco};
+  padding: 32px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+
+  img {
+    height: 280px;
+    width: 280px;
+    object-fit: cover;
+    margin: 0 24px 0 0;
+  }
+
+  > img {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    margin: 0;
+  }
+`
+export const InfosContainer = styled.div`
+  h4 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+
+  img {
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+  }
+
+  p {
+    line-height: 22px;
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+
+  ${BotaoAdicionar} {
+    height: 24px;
+    width: 218px;
+  }
 `

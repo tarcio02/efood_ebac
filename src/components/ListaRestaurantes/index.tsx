@@ -13,16 +13,18 @@ const ListaRestaurantes = ({ comercios }: Props) => (
     <div>
       <List>
         {comercios.map((comercio) => (
-          <Restaurante
-            key={comercio.id}
-            tipo={comercio.tipo}
-            image={comercio.capa}
-            title={comercio.titulo}
-            number={comercio.avaliacao}
-            destacado={comercio.destacado}
-            description={comercio.descricao}
-            button={comercio.button}
-          />
+          <li key={comercio.id}>
+            <Restaurante
+              id={comercio.id}
+              tipo={comercio.tipo}
+              image={comercio.capa}
+              title={comercio.titulo}
+              number={comercio.avaliacao}
+              destacado={comercio.destacado}
+              description={comercio.descricao}
+              button={comercio.button}
+            />
+          </li>
         ))}
       </List>
     </div>

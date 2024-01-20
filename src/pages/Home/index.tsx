@@ -85,8 +85,14 @@ export type Restaurant = {
   button: string
   destacado: boolean
   tipo: string
-  cardapio?: string
-  preco?: number
+  cardapio?: {
+    foto: string
+    preco: number
+    id: number
+    nome: string
+    descricao: string
+    porcao: string
+  }
 }
 
 const Home = () => {

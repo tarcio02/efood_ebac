@@ -2,7 +2,9 @@ import styled from 'styled-components'
 import { cores } from '../../styles'
 
 export const Imagem = styled.img`
-  max-width: 100%;
+  width: 100%;
+  height: 175px;
+  object-fit: cover;
   padding: 8px 8px 0 8px;
   background-color: ${cores.coral};
 `

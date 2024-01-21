@@ -49,6 +49,7 @@ export const Descricao = styled.p`
   font-size: 14px;
   line-height: 22px;
   margin: 16px 0;
+  min-height: 110px;
 `
 
 export const Infos = styled.div`

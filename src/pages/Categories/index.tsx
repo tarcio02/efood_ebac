@@ -1,11 +1,14 @@
 import { useParams } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+//import { useEffect, useState } from 'react'
 
 import ProfileHeader from '../../components/ProfileHeader'
 import Banner from '../../components/Banner'
 import ListaPratos from '../../components/ListaPratos'
 
+import { useGetRestaurantQuery } from '../../services/api'
+
 export type Prato = {
+  cardapio: Prato[]
   id: number
   foto: string
   preco: number
@@ -17,22 +20,19 @@ export type Prato = {
 const Categories = () => {
   const { id } = useParams()
 
-  const [prato, setPrato] = useState<Prato[]>([])
+  const { data: restaurant } = useGetRestaurantQuery(id!)
 
-  useEffect(() => {
-    fetch(`https://fake-api-tau.vercel.app/api/efood/restaurantes/${id}`)
-      .then((res) => res.json())
-      .then((res) => setPrato(res.cardapio))
-  }, [id])
+  if (restaurant) {
+    return (
+      <>
+        <ProfileHeader />
+        <Banner />
+        <ListaPratos pratos={restaurant.cardapio} />
+      </>
+    )
+  }
 
-  return (
-    <>
-      <ProfileHeader />
-      <Banner />
-      {prato && <ListaPratos pratos={prato} />}
-      {!prato && <h3>Carregando...</h3>}
-    </>
-  )
+  return <h3>Carregando...</h3>
 }
 
 export default Categories

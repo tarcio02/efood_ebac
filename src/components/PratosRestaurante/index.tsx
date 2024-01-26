@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
 
 import fechar from '../../assets/images/close.png'
 
@@ -28,7 +29,7 @@ type ModalState = {
   isVisible: boolean
 }
 
-const formataPreco = (preco = 0) => {
+export const formataPreco = (preco = 0) => {
   return new Intl.NumberFormat('pt-BR', {
     style: 'currency',
     currency: 'BRL'
@@ -52,6 +53,12 @@ const PratosRestaurante = ({ foto, nome, descricao, porcao, preco }: Props) => {
     }
     return descricao
   }
+
+  // const dispatch = useDispatch()
+  // const addToCart = () => {
+  //   dispatch(add(restaurant))
+  //   dispatch(open())
+  // }
 
   return (
     <Card>

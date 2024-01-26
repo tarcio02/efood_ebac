@@ -1,6 +1,7 @@
 //import ModeloRestaurante from '../../models/Restaurante'
 import { Prato } from '../../pages/Categories'
 import PratosRestaurante from '../PratosRestaurante'
+//import { Restaurant } from '../../pages/Home'
 
 import { Container, List } from './styles'
 

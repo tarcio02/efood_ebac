@@ -1,17 +1,19 @@
 import { useDispatch, useSelector } from 'react-redux'
 
-import Tag from '../Tag'
+//import Tag from '../Tag'
 import { RootReducer } from '../../store'
 import { close, remove } from '../../store/reducers/cart'
 import { formataPreco } from '../PratosRestaurante'
+
+import prato from '../../assets/images/prato.png'
 
 import {
   Overlay,
   CartContainer,
   Sidebar,
-  Prices,
-  Quantity,
-  CartItem
+  CartItem,
+  ValorTotal,
+  ButtonContinuar
 } from './styles'
 
 const Cart = () => {
@@ -42,18 +44,26 @@ const Cart = () => {
             <CartItem key={item.id}>
               <img src={item.cardapio?.foto} alt={item.cardapio?.nome} />
               <div>
-                <h3>{item.cardapio?.nome}</h3>
-                <span>{formataPreco(item.cardapio?.preco)}</span>
+                <h3>Pizza Marguerita</h3>
+                <span>R$ 60,90</span>
               </div>
               <button onClick={() => removeItem(item.id)} type="button" />
             </CartItem>
           ))}
         </ul>
-        <Quantity>{items.length} jogo(s) no carrinho</Quantity>
-        <Prices>Total de {formataPreco(getTotalPrice())} </Prices>
-        <button title="Clique aqui para continuar com a compra" type="button">
-          Continuar com a compra
-        </button>
+        <ValorTotal>
+          <p>Valor total</p>
+          <p>
+            {formataPreco(getTotalPrice())}
+            {'R$ 182,70'}
+          </p>
+        </ValorTotal>
+        <ButtonContinuar
+          title="Clique aqui para continuar com a entrega"
+          type="button"
+        >
+          Continuar com a entrega
+        </ButtonContinuar>
       </Sidebar>
     </CartContainer>
   )

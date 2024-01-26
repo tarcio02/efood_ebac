@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { cores } from '../../styles'
 import { TagContainer } from '../Tag/styles'
 
-import fechar from '../../assets/images/close.png'
+import lixeira from '../../assets/images/lixeira.png'
 
 export const Overlay = styled.div`
   position: absolute;
@@ -36,25 +36,12 @@ export const Sidebar = styled.aside`
   width: 100%;
 `
 
-export const Prices = styled.p`
-  font-weight: bold;
-  font-size: 14px;
-  color: ${cores.coral};
-  margin-bottom: 24px;
-`
-
-export const Quantity = styled.p`
-  font-weight: bold;
-  font-size: 16px;
-  color: ${cores.bege};
-  margin: 32px 0 16px;
-`
-
 export const CartItem = styled.li`
   display: flex;
   background-color: ${cores.bege};
-  padding: 8px 0;
+  padding: 8px;
   position: relative;
+  margin-bottom: 16px;
 
   img {
     height: 80px;
@@ -67,6 +54,7 @@ export const CartItem = styled.li`
     color: ${cores.coral};
     font-weight: bold;
     font-size: 16px;
+    margin-bottom: 16px;
   }
 
   ${TagContainer} {
@@ -74,13 +62,34 @@ export const CartItem = styled.li`
   }
 
   button {
-    background-image: url(${fechar});
+    background-image: url(${lixeira});
     width: 16px;
     height: 16px;
     border: none;
     background-color: transparent;
     position: absolute;
-    top: 8px;
-    right: 0;
+    bottom: 8px;
+    right: 8px;
+    cursor: pointer;
   }
+`
+
+export const ValorTotal = styled.div`
+  margin: 40px 0 16px;
+  color: ${cores.bege};
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 14px;
+`
+
+export const ButtonContinuar = styled.button`
+  border: none;
+  background-color: ${cores.bege};
+  color: ${cores.coral};
+  font-size: 14px;
+  font-weight: bold;
+  padding: 4px;
+  width: 100%;
+  cursor: pointer;
 `

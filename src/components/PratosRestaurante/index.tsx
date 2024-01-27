@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 
 import fechar from '../../assets/images/close.png'
-//import { Restaurant } from '../../pages/Home'
+import { Prato } from '../../pages/Categories'
 import { add, open } from '../../store/reducers/cart'
 
 import {
@@ -18,17 +18,12 @@ import {
   InfosContainer
 } from './styles'
 
-type Props = {
-  id: number
-  foto: string
-  nome: string
-  descricao: string
-  porcao: string
-  preco: number
-}
-
 type ModalState = {
   isVisible: boolean
+}
+
+type PratoProps = {
+  prato: Prato
 }
 
 export const formataPreco = (preco = 0) => {
@@ -38,7 +33,14 @@ export const formataPreco = (preco = 0) => {
   }).format(preco)
 }
 
-const PratosRestaurante = ({ foto, nome, descricao, porcao, preco }: Props) => {
+const PratosRestaurante = ({
+  foto,
+  nome,
+  descricao,
+  porcao,
+  preco,
+  id
+}: Prato) => {
   const [modal, setModal] = useState<ModalState>({
     isVisible: false
   })
@@ -56,8 +58,18 @@ const PratosRestaurante = ({ foto, nome, descricao, porcao, preco }: Props) => {
     return descricao
   }
 
+  const prato = {
+    foto,
+    nome,
+    descricao,
+    porcao,
+    preco,
+    id
+  }
+
   const dispatch = useDispatch()
   const addToCart = () => {
+    dispatch(add(prato))
     dispatch(open())
   }
 

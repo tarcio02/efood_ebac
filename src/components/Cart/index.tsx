@@ -27,7 +27,7 @@ const Cart = () => {
 
   const getTotalPrice = () => {
     return items.reduce((acumulador, valorAtual) => {
-      return (acumulador += valorAtual.cardapio.preco!)
+      return (acumulador += valorAtual.preco!)
     }, 0)
   }
 
@@ -42,10 +42,10 @@ const Cart = () => {
         <ul>
           {items.map((item) => (
             <CartItem key={item.id}>
-              <img src={item.cardapio?.foto} alt={item.cardapio?.nome} />
+              <img src={item.foto} alt={item.nome} />
               <div>
-                <h3>Pizza Marguerita</h3>
-                <span>R$ 60,90</span>
+                <h3>{item.nome}</h3>
+                <span>{formataPreco(item.preco)}</span>
               </div>
               <button onClick={() => removeItem(item.id)} type="button" />
             </CartItem>
@@ -55,7 +55,7 @@ const Cart = () => {
           <p>Valor total</p>
           <p>
             {formataPreco(getTotalPrice())}
-            {'R$ 182,70'}
+            {''}
           </p>
         </ValorTotal>
         <ButtonContinuar

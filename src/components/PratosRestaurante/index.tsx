@@ -22,9 +22,9 @@ type ModalState = {
   isVisible: boolean
 }
 
-type PratoProps = {
-  prato: Prato
-}
+// type PratoProps = {
+//   prato: Prato
+// }
 
 export const formataPreco = (preco = 0) => {
   return new Intl.NumberFormat('pt-BR', {

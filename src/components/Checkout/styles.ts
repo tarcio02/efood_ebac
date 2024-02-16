@@ -2,8 +2,15 @@ import styled from 'styled-components'
 import { cores } from '../../styles'
 
 export const Container = styled.div`
+  color: ${cores.bege};
+
+  p {
+    margin-bottom: 16px;
+    font-size: 14px;
+    line-height: 22px;
+  }
+
   h3 {
-    color: ${cores.bege};
     margin-bottom: 16px;
     font-size: 16px;
   }
@@ -21,6 +28,19 @@ export const Container = styled.div`
     margin-top: 16px;
   }
 
+  .displayFlex {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  .maxWidth {
+    max-width: 95px;
+    width: 100%;
+  }
+`
+
+export const InputGroup = styled.div`
   input {
     width: 100%;
     padding: 8px;
@@ -28,14 +48,17 @@ export const Container = styled.div`
     border: 1px solid ${cores.bege};
     background-color: ${cores.bege};
   }
-`
 
-export const InputGroup = styled.div`
   label {
     display: block;
     color: ${cores.bege};
     font-size: 14px;
     font-weight: bold;
+    width: 100%;
+  }
+
+  .error {
+    border: 2px solid red;
   }
 `
 

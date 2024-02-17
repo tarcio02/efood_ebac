@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { breakpoints, cores } from '../../styles'
 
 export const FooterContainer = styled.div`
   background-color: ${cores.bege};
@@ -7,7 +7,7 @@ export const FooterContainer = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
-  height: 298px;
+  height: auto;
 `
 
 export const RedesContainer = styled.div`
@@ -23,4 +23,8 @@ export const Descricao = styled.p`
   text-align: center;
   max-width: 480px;
   width: 100%;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    padding: 20px;
+  }
 `

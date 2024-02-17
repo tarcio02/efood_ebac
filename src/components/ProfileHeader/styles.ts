@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import bannerImg from '../../assets/images/Vector.png'
-import { cores } from '../../styles'
+import { breakpoints, cores } from '../../styles'
 
 export const HeaderContainer = styled.div`
   display: flex;
@@ -13,6 +13,15 @@ export const HeaderContainer = styled.div`
     display: flex;
     text-align: center;
     padding: 40px 0;
+
+    @media (max-width: ${breakpoints.tablet}) {
+      display: block;
+      height: 300px;
+
+      img {
+        margin: 56px 0;
+      }
+    }
   }
 `
 

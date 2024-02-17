@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { breakpoints, cores } from '../../styles'
 
 export const Card = styled.div`
   position: relative;
@@ -8,6 +8,13 @@ export const Card = styled.div`
     width: 100%;
     max-height: 217px;
     object-fit: cover;
+
+    @media (max-width: ${breakpoints.tablet}) {
+      padding: 0 20px;
+      display: block;
+      bottom: 3px;
+      margin-top: 60px;
+    }
   }
 `
 
@@ -19,6 +26,10 @@ export const CardContainer = styled.div`
   border-right: 1px solid ${cores.coral};
   border-bottom: 1px solid ${cores.coral};
   margin-top: -4px;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    margin: 0 20px;
+  }
 `
 
 export const TituloContainer = styled.div`
@@ -54,7 +65,7 @@ export const Descricao = styled.p`
 export const Infos = styled.div`
   position: absolute;
   top: 16px;
-  right: 8px;
+  right: 24px;
 `
 
 export const TagContainer = styled.div`

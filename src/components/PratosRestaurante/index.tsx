@@ -111,7 +111,7 @@ const PratosRestaurante = ({
             <InfosContainer>
               <h4>{nome}</h4>
               <p>{descricao}</p>
-              <p>{porcao}</p>
+              <p>Serve: {porcao}</p>
               <BotaoAdicionar onClick={addToCart}>
                 Adicionar ao carrinho - {formataPreco(preco)}
               </BotaoAdicionar>

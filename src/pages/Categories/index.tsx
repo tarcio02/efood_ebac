@@ -5,6 +5,7 @@ import { useGetRestaurantQuery } from '../../services/api'
 import ProfileHeader from '../../components/ProfileHeader'
 import Banner from '../../components/Banner'
 import ListaPratos from '../../components/ListaPratos'
+import Loader from '../../components/Loader'
 
 export type Prato = {
   id: number
@@ -44,7 +45,7 @@ const Categories = () => {
     )
   }
 
-  return <h3>Carregando...</h3>
+  return <Loader />
 }
 
 export default Categories

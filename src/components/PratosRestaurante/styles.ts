@@ -106,6 +106,10 @@ export const Modal = styled.div`
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.73);
+
+    @media (max-width: ${breakpoints.tablet}) {
+      height: 105vh;
+    }
   }
 `
 
@@ -131,7 +135,7 @@ export const ModalContent = styled.div`
     margin: 0 24px 0 0;
 
     @media (max-width: ${breakpoints.tablet}) {
-      margin: 20px 0;
+      margin: 0 0 16px;
       height: 230px;
       width: 100%;
     }
@@ -148,11 +152,11 @@ export const ModalContent = styled.div`
   }
 
   @media (max-width: ${breakpoints.tablet}) {
-    display: block;
-    max-width: 300px;
+    max-width: 335px;
     width: 100%;
-    max-height: 680px;
-    height: 100%;
+    max-height: none;
+    height: auto;
+    flex-direction: column;
   }
 `
 export const InfosContainer = styled.div`
